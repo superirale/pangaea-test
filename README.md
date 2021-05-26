@@ -23,13 +23,14 @@ Both services are fully dockerized. To set up the services please follow the ste
 
 #### Publisher service
 
-* Enter the `publisher` directory
+* Enter the `publisher` directory.
+* Create `data/mysql/lib` directory.
 * Create a `.env` file from the `.env.default` provided.
-* Run the following command `docker-compose up` to build and start the service
+* Run the following command `docker-compose up` to build and start the service.
 
 #### Subscriber service
-* Enter the `subscriber` directory 
-* Run the following command `docker-compose up`
+* Enter the `subscriber` directory.
+* Run the following command `docker-compose up`.
 
 
 #### Available Endpoints
