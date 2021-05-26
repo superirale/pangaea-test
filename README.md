@@ -43,7 +43,7 @@ Both services are fully dockerized. To set up the services please follow the ste
 * POST /listener2
 
 
-<b> NOTE</b>: If you do not have docker installed, You will need to manually configure the app to point to your local instance of MySQL/MariaDB and Redis for the publisher service. Then run `npm install` and `npm start` for both service to install the necessary dependencies and launch them.
+<b> NOTE</b>: If you do not have docker installed, You will need to manually configure the app to point to your local instance of MySQL/MariaDB and Redis for the publisher service. Then run `npm install` and `npm start` for both services to install the necessary dependencies and launch them.
 
 
 
