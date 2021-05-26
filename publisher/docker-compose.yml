@@ -1,0 +1,40 @@
+version: '3.7'
+
+services:
+    publisher:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        env_file: .env
+        container_name: pangaea-publisher
+        depends_on: 
+            - db
+            - redis
+        ports:
+            - $APP_PORT:8080
+        volumes:
+            - ./:/usr/src/app
+    db:
+        image: mariadb/server:10.4
+        restart: always
+        container_name: pangaea-db
+        ports:
+            - $DB_PORT:3306
+        environment:
+            MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+            MYSQL_DATABASE: $DB_NAME
+        volumes:
+            - ./data/mysql/lib:/var/lib/mysql
+            - ./data/mysql/init:/docker-entrypoint-initdb.d
+    redis:
+        image: redis:6.0.9-alpine
+        command: $COMMAND
+        container_name: pangaea-redis
+        restart: always
+        volumes:
+            - ./data/redis:/data
+        ports:
+            - 6379:6379
+
+
+    

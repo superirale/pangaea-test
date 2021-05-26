@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+    subscriber:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: pangaea-subscriber
+        depends_on: 
+            - publisher
+        ports:
+            - 8081:3000
+        volumes:
+            - ./:/usr/src/app
