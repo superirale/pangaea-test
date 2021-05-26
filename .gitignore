@@ -2,3 +2,5 @@
 */.env
 */data/mysql/lib/*
 */data/redis/*
+*/.DS_Store
+*/*/.DS_Store
