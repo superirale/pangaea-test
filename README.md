@@ -15,6 +15,7 @@ The publisher service is responsible for creating topics, subscribing HTTP endpo
 * NodeJS
 * Mysql/MariaDB
 * Redis
+* Ngrok/Localtunnel
 
 
 
@@ -31,7 +32,7 @@ Both services are fully dockerized. To set up the services please follow the ste
 #### Subscriber service
 * Enter the `subscriber` directory.
 * Run the following command `docker-compose up`.
-
+This service should be exposed using `ngrok` or `localtunnel` 
 
 #### Available Endpoints
 
