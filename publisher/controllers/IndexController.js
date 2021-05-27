@@ -114,11 +114,15 @@ exports.publishMessage = async (req, res) => {
 
 
 httpRequestQueue.process(async (job) => {
-  
-    const { urls, data } = job.data;
-    urls.map((item) => {
-        axios.post(item.url, data).catch(err => {
-            console.error(err.response.status);
+
+    try {
+        const { urls, data } = job.data;
+        urls.map((item) => {
+            axios.post(item.url, data).catch(err => {
+                console.error(err.response.status);
+            });
         });
-    });
+    } catch (error) {
+        console.error("Internal error");
+    }
 });
